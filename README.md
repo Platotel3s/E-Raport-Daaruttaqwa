@@ -179,7 +179,7 @@ Proyek ini dilisensikan di bawah MIT License.
 
     Syaiful Yudha Platoteles - 🚀 Project Lead
 
-    Syaiful Yudha Platoteles - 🖥️ Fullstack Developer
+    Syaiful Yudha Platoteles - 🖥️ Backend Developer
 
     Syaiful Yudha Platoteles - 🎨 Frontend Developer
 
