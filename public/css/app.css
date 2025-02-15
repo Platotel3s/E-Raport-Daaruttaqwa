@@ -1,0 +1,12 @@
+body {
+    padding: 20px;
+}
+.navbar {
+    margin-bottom: 20px;
+}
+.dropdown-item{
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+}
