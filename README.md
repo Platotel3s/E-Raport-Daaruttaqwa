@@ -1,66 +1,188 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<h1 align="center">📘 E-Raport Daaruttaqwa</h1><p align="center"> <strong>E-raport Daaruttaqwa</strong> adalah aplikasi rapor berbasis web dan mobile yang dirancang untuk memudahkan para asatidz (guru) dalam mengelola nilai santri, serta membantu wali santri memantau perkembangan akademik anaknya selama belajar di Pondok Pesantren Daaruttaqwa. Aplikasi ini menggantikan sistem rapor konvensional yang manual dengan sistem digital yang terintegrasi. 🚀 </p>
+🌟 Fitur Utama
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplikasi ini memiliki empat role dengan akses dan fitur yang berbeda:
+1. 👨‍🎓 Santri dan Wali Santri
 
-## About Laravel
+    📊 Melihat mata pelajaran dan nilai harian santri.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+    ⚠️ Melihat pelanggaran disiplin santri.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+    📥 Mengunduh rapor, ijazah, syahadah, dan sertifikat prestasi.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+    📅 Melihat absensi kehadiran santri.
 
-## Learning Laravel
+2. 👩‍🏫 Guru Mapel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+    ✅ Mengisi absensi santri.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+    📝 Mengisi nilai harian, UTS, dan UAS.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    📚 Membuat dan mengirim soal latihan.
 
-## Laravel Sponsors
+    📤 Mengirim laporan pencapaian pembelajaran ke kepala sekolah dan KMMI.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+3. 🧑‍🏫 Wali Kelas
 
-### Premium Partners
+    📋 Menerima laporan nilai dan pelanggaran dari guru mapel.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+    📄 Mengunggah dokumen seperti rapor, ijazah, dan sertifikat prestasi.
 
-## Contributing
+    📩 Mengirim rapor dan nilai ke kepala sekolah untuk ditandatangani.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4. 👨‍💼 Kepala Sekolah dan KMMI
 
-## Code of Conduct
+    🗂️ Mengelola data santri, guru, dan kelas.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    📑 Mendistribusikan dokumen seperti rapor dan ijazah.
 
-## Security Vulnerabilities
+    📈 Memantau perkembangan akademik santri secara general.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+🛠️ Teknologi yang Digunakan
+Backend
 
-## License
+    🐘 Laravel: Framework PHP untuk pengembangan backend.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    🗃️ MySQL: Database untuk menyimpan data santri, nilai, absensi, dan lainnya.
+
+    🔗 API: Untuk integrasi antara frontend dan backend.
+
+Frontend
+
+    🎨 Bootstrap: Framework CSS untuk tampilan yang responsif.
+
+    🖥️ JavaScript: Untuk interaktivitas di frontend.
+
+    📊 Chart.js: Library untuk visualisasi data (grafik nilai, dll.).
+
+Lainnya
+
+    🐙 Git: Untuk version control.
+
+    🐳 Docker: Untuk containerization dan deployment.
+
+    📤 Postman: Untuk testing API.
+
+🚀 Cara Penggunaan
+1. Instalasi
+
+    Clone repository ini:
+    bash
+    Copy
+
+    git clone https://github.com/username/e-raport-daaruttaqwa.git
+
+    Install dependencies:
+    bash
+    Copy
+
+    composer install
+    npm install
+
+    Buat file .env dan sesuaikan konfigurasi database:
+    env
+    Copy
+
+    DB_DATABASE=nama_database
+    DB_USERNAME=username
+    DB_PASSWORD=password
+
+    Jalankan migrasi dan seeder:
+    bash
+    Copy
+
+    php artisan migrate --seed
+
+    Jalankan aplikasi:
+    bash
+    Copy
+
+    php artisan serve
+
+2. Login
+
+    🌐 Buka aplikasi di browser.
+
+    🔑 Login menggunakan akun yang telah terdaftar (santri, wali santri, guru, atau kepala sekolah).
+
+3. Penggunaan Berdasarkan Role
+
+    👨‍🎓 Santri/Wali Santri: Akses menu nilai, absensi, dan dokumen.
+
+    👩‍🏫 Guru Mapel: Isi nilai, absensi, dan buat soal latihan.
+
+    🧑‍🏫 Wali Kelas: Kelola laporan nilai dan dokumen.
+
+    👨‍💼 Kepala Sekolah: Pantau perkembangan akademik dan kelola data.
+
+🌟 Manfaat dan Kelebihan
+Manfaat
+
+    Bagi Asatidz (Guru):
+
+        🖋️ Memudahkan pengisian nilai dan absensi.
+
+        ⏳ Mengurangi beban administratif.
+
+    Bagi Wali Santri:
+
+        👀 Memantau perkembangan akademik anak secara real-time.
+
+        📂 Mengakses dokumen seperti rapor dan ijazah dengan mudah.
+
+    Bagi Pondok Pesantren:
+
+        📈 Meningkatkan efisiensi manajemen akademik.
+
+        🔍 Meningkatkan transparansi informasi.
+
+Kelebihan
+
+    🌐 Multi-Platform: Bisa diakses melalui web dan mobile.
+
+    👥 Multi-Role: Mendukung empat role dengan fitur yang berbeda.
+
+    🔗 Terintegrasi: Semua data tersimpan dalam satu sistem.
+
+    🖼️ User-Friendly: Antarmuka yang mudah digunakan.
+
+🤝 Kontribusi
+
+Jika Anda ingin berkontribusi pada proyek ini, silakan ikuti langkah-langkah berikut:
+
+    Fork repository ini.
+
+    Buat branch baru:
+    bash
+    Copy
+
+    git checkout -b fitur-baru
+
+    Commit perubahan Anda:
+    bash
+    Copy
+
+    git commit -m "Menambahkan fitur baru"
+
+    Push ke branch:
+    bash
+    Copy
+
+    git push origin fitur-baru
+
+    Buat pull request.
+
+📜 Lisensi
+
+Proyek ini dilisensikan di bawah MIT License.
+👨‍💻 Tim Pengembang
+
+    Syaiful Yudha Platoteles - 🚀 Project Lead
+
+    Syaiful Yudha Platoteles - 🖥️ Backend Developer
+
+    Syaiful Yudha Platoteles - 🎨 Frontend Developer
+
+    Syaiful Yudha Platoteles - 🎨 UI/UX Designer
+
+Dengan E-raport Daaruttaqwa, kami berharap dapat memberikan solusi digital yang memudahkan manajemen akademik di Pondok Pesantren Daaruttaqwa. Terima kasih telah menggunakan aplikasi ini! 😊
