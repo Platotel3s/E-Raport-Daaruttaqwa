@@ -177,12 +177,6 @@ Jika Anda ingin berkontribusi pada proyek ini, silakan ikuti langkah-langkah ber
 Proyek ini dilisensikan di bawah MIT License.
 👨‍💻 Tim Pengembang
 
-    Syaiful Yudha Platoteles - 🚀 Project Lead
-
-    Syaiful Yudha Platoteles - 🖥️ Backend Developer
-
-    Syaiful Yudha Platoteles - 🎨 Frontend Developer
-
-    Syaiful Yudha Platoteles - 🎨 UI/UX Designer
+    Syaiful Yudha Platoteles - 🚀 Project Lead, Fullstack Developer, UI/UX Designer
 
 Dengan E-raport Daaruttaqwa, kami berharap dapat memberikan solusi digital yang memudahkan manajemen akademik di Pondok Pesantren Daaruttaqwa. Terima kasih telah menggunakan aplikasi ini! 😊
