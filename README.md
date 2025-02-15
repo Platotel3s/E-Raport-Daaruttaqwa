@@ -70,7 +70,7 @@ Lainnya
     bash
     Copy
 
-    git clone https://github.com/username/e-raport-daaruttaqwa.git
+    git clone https://github.com/Platotel3s/E-Raport-Daaruttaqwa.git
 
     Install dependencies:
     bash
@@ -179,7 +179,7 @@ Proyek ini dilisensikan di bawah MIT License.
 
     Syaiful Yudha Platoteles - 🚀 Project Lead
 
-    Syaiful Yudha Platoteles - 🖥️ Backend Developer
+    Syaiful Yudha Platoteles - 🖥️ Fullstack Developer
 
     Syaiful Yudha Platoteles - 🎨 Frontend Developer
 
