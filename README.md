@@ -175,6 +175,7 @@ Jika Anda ingin berkontribusi pada proyek ini, silakan ikuti langkah-langkah ber
 📜 Lisensi
 
 Proyek ini dilisensikan di bawah MIT License.
+
 👨‍💻 Tim Pengembang
 
     Syaiful Yudha Platoteles - 🚀 Project Lead, Fullstack Developer, UI/UX Designer
