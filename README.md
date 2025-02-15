@@ -43,7 +43,7 @@ Backend
 
     🐘 Laravel: Framework PHP untuk pengembangan backend.
 
-    🗃️ MySQL: Database untuk menyimpan data santri, nilai, absensi, dan lainnya.
+    🗃️ Mariadb: Database untuk menyimpan data santri, nilai, absensi, dan lainnya.
 
     🔗 API: Untuk integrasi antara frontend dan backend.
 
