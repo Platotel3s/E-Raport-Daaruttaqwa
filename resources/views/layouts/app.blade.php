@@ -7,77 +7,86 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('font/css/all.css') }}">
+    <link rel="stylesheet" href="{{ asset('font/css/all.min.css') }}">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            @auth
-                @if (Auth::user()->role === 'siswa')
-                    <a class="navbar-brand" href="{{ route('siswa.beranda') }}">My App</a>
-                @elseif (Auth::user()->role === 'walas')
-                    <a class="navbar-brand" href="{{ route('walas.beranda') }}">My App</a>
-                @elseif (Auth::user()->role === 'guru')
-                    <a class="navbar-brand" href="{{ route('guru.beranda') }}">My App</a>
-                @endif
-            @endauth
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    @auth
-                        @if (Auth::user()->role === 'siswa')
-                            <li class="nav-item">
-                                <a href="{{ route('siswa.rapot') }}" class="nav-link">
-                                    <i class="fas fa-book"></i> Rapot
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ route('siswa.pelanggaran') }}" class="nav-link">
-                                    <i class="fas fa-warning"></i> Pelanggaran
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ route('siswa.sekolah') }}" class="nav-link">
-                                    <i class="fas fa-school"></i> Sekolah
-                                </a>
-                            </li>
-                        @endif
-                        @endauth
-                    @auth
-                        <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                {{ Auth::user()->name }}
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li>
-                                    <a class="dropdown-item" href="#" id="openProfileModal">Profil</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#" id="openPasswordModal">Ganti Password</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <li class="nav-item">
-                            <form action="{{ route('logout') }}" method="POST">
-                                @csrf
-                                <button type="submit" class="nav-link text-danger">Keluar</button>
-                            </form>
-                        </li>
-                        
-                    @else
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">Register</a>
-                        </li>
-                    @endauth
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div class="main-container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex flex-column">
+            <div class="container-fluid">
+                @auth
+                    @if (Auth::user()->role === 'siswa')
+                        <a class="navbar-brand" href="{{ route('siswa.beranda') }}">My App</a>
+                    @elseif (Auth::user()->role === 'walas')
+                        <a class="navbar-brand" href="{{ route('walas.beranda') }}">My App</a>
+                    @elseif (Auth::user()->role === 'guru')
+                        <a class="navbar-brand" href="{{ route('guru.beranda') }}">My App</a>
+                    @endif
 
-    <div class="container">
-        @yield('content')
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <div class="variation-nav">
+                                @auth
+                                    @if (Auth::user()->role === 'siswa')
+                                        <li class="nav-item">
+                                            <a href="{{ route('siswa.rapot') }}" class="nav-link">
+                                                <i class="fas fa-book"></i> Rapot
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{{ route('siswa.pelanggaran') }}" class="nav-link">
+                                                <i class="fas fa-triangle-exclamation"></i> Pelanggaran
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{{ route('siswa.sekolah') }}" class="nav-link">
+                                                <i class="fas fa-school"></i> Sekolah
+                                            </a>
+                                        </li>
+                                    @endif
+                                @endauth    
+                            </div>
+                            @auth
+                                <div class="dropdown">
+                                    <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                        {{ Auth::user()->role }}
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <li>
+                                            <a class="dropdown-item" href="#" id="openProfileModal">Profil</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#" id="openPasswordModal">Ganti Password</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="out-link">
+                                    <li class="nav-item">
+                                        <form action="{{ route('logout') }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="nav-link text-danger text-center bg-warning">
+                                                <i class="fas fa-sign-out-alt"></i> Keluar
+                                            </button>
+                                        </form>
+                                    </li>
+                                </div>
+                            @else
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">Register</a>
+                                </li>
+                            @endauth
+                        </ul>
+                    </div>
+                @endauth
+
+                
+            </div>
+        </nav>
+        <div class="container">
+            @yield('content')
+        </div> 
     </div>
     <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
         <div class="modal-dialog">

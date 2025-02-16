@@ -10,3 +10,28 @@ body {
 a{
     text-decoration: none;
 }
+.main-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.container-fluid{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: #3d96fc;
+}
+.collapse .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 70vh;
+    gap: 1rem;
+}
+.navbar-nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 5rem;
+}
+
