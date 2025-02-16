@@ -67,43 +67,35 @@ Lainnya
 1. Instalasi
 
     Clone repository ini:
-    bash
-    Copy
 
-    git clone https://github.com/Platotel3s/E-Raport-Daaruttaqwa.git
+        git clone https://github.com/Platotel3s/E-Raport-Daaruttaqwa.git
 
     Install dependencies:
-    bash
-    Copy
 
-    composer install
-    npm install
+        composer install
+        npm install
 
     Buat file .env dan sesuaikan konfigurasi database:
-    env
-    Copy
 
-    DB_DATABASE=nama_database
-    DB_USERNAME=username
-    DB_PASSWORD=password
+        DB_DATABASE=nama_database
+        DB_USERNAME=username
+        DB_PASSWORD=password
 
     Jalankan migrasi dan seeder:
     bash
     Copy
 
-    php artisan migrate --seed
+        php artisan migrate --seed
 
     Jalankan aplikasi:
-    bash
-    Copy
 
-    php artisan serve
+        php artisan serve
 
 2. Login
 
     🌐 Buka aplikasi di browser.
 
-    🔑 Login menggunakan akun yang telah terdaftar (santri, wali santri, guru, atau kepala sekolah).
+    🔑 Login menggunakan akun yang telah terdaftar (santri atau wali santri, guru, atau kepala sekolah).
 
 3. Penggunaan Berdasarkan Role
 
