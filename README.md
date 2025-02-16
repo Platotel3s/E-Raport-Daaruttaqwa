@@ -142,34 +142,30 @@ Kelebihan
 
 Jika Anda ingin berkontribusi pada proyek ini, silakan ikuti langkah-langkah berikut:
 
-    Fork repository ini.
 
-    Buat branch baru:
-    bash
-    Copy
+Buat branch baru:
 
     git checkout -b fitur-baru
 
-    Commit perubahan Anda:
-    bash
-    Copy
+Commit perubahan Anda:
 
     git commit -m "Menambahkan fitur baru"
 
-    Push ke branch:
-    bash
-    Copy
+Push ke branch:
 
     git push origin fitur-baru
 
-    Buat pull request.
+Buat pull request.
 
 📜 Lisensi
 
 Proyek ini dilisensikan di bawah MIT License.
 
-👨‍💻 Tim Pengembang
+👨‍💻 Tim Pengembang <br>
 
-    Syaiful Yudha Platoteles - 🚀 Project Lead, Fullstack Developer, UI/UX Designer
+    Syaiful Yudha Platoteles :
+        - 🚀 Project Lead, 
+        - Fullstack Developer 
+        - UI/UX Designer
 
 Dengan E-raport Daaruttaqwa, kami berharap dapat memberikan solusi digital yang memudahkan manajemen akademik di Pondok Pesantren Daaruttaqwa. Terima kasih telah menggunakan aplikasi ini! 😊
