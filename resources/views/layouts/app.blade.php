@@ -28,17 +28,22 @@
                                 @auth
                                     @if (Auth::user()->role === 'siswa')
                                         <li class="nav-item">
-                                            <a href="{{ route('siswa.rapot') }}" class="nav-link">
+                                            <a href="{{ route('siswa.beranda') }}" class="nav-link text-white">
+                                                <i class="fas fa-home"></i> Beranda
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="{{ route('siswa.rapot') }}" class="nav-link text-white">
                                                 <i class="fas fa-book"></i> Rapot
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="{{ route('siswa.pelanggaran') }}" class="nav-link">
+                                            <a href="{{ route('siswa.pelanggaran') }}" class="nav-link text-white">
                                                 <i class="fas fa-triangle-exclamation"></i> Pelanggaran
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="{{ route('siswa.sekolah') }}" class="nav-link">
+                                            <a href="{{ route('siswa.sekolah') }}" class="nav-link text-white">
                                                 <i class="fas fa-school"></i> Sekolah
                                             </a>
                                         </li>
@@ -63,7 +68,7 @@
                                     <li class="nav-item">
                                         <form action="{{ route('logout') }}" method="POST">
                                             @csrf
-                                            <button type="submit" class="nav-link text-danger text-center bg-warning">
+                                            <button type="submit" class="nav-link text-danger text-center bg-white">
                                                 <i class="fas fa-sign-out-alt"></i> Keluar
                                             </button>
                                         </form>
