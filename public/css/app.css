@@ -19,7 +19,7 @@ a{
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    background-color: #000ba3;
+    background-color: #0634ff;
 }
 .collapse .navbar-nav {
     display: flex;
