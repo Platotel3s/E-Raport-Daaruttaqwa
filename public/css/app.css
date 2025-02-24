@@ -1,8 +1,11 @@
 body {
     padding: 20px;
+    font-family: 'Times New Roman', Times, serif;
 }
 .navbar {
     margin-bottom: 20px;
+    padding: 0;
+    margin: 0;
 }
 .dropdown-item{
     cursor: pointer;
@@ -34,4 +37,5 @@ a{
     justify-content: space-around;
     margin-top: 5rem;
 }
+
 

@@ -17,11 +17,15 @@ class AuthController extends Controller
             'name'=>'required|string|max:255',
             'email'=>'required|email',
             'password'=>'required|string|min:8|confirmed',
+            'nomorHp'=>'required|string|max:13',
+            'alamat'=>'required|string'
         ]);
         $user=User::create([
             'name'=>$request->name,
             'email'=>$request->email,
             'password'=>Hash::make($request->password),
+            'nomorHp'=>$request->nomorHp,
+            'alamat'=>$request->alamat,
         ]);
         Auth::login($user);
         return redirect('/home');

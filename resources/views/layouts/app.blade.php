@@ -39,7 +39,7 @@
                                         </li>
                                         <li class="nav-item">
                                             <a href="{{ route('siswa.pelanggaran') }}" class="nav-link text-white">
-                                                <i class="fas fa-triangle-exclamation"></i> Pelanggaran
+                                                <i class="fas fa-triangle-exclamation"></i> violation
                                             </a>
                                         </li>
                                         <li class="nav-item">
