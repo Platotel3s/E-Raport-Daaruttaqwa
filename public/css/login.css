@@ -1,0 +1,16 @@
+form{
+    box-sizing: border-box;
+}
+.container{
+    margin: 50px auto;
+    width: 800px;
+}
+.form-group{
+    margin-bottom: 20px;
+}
+h4{
+    text-align: center;
+}
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
