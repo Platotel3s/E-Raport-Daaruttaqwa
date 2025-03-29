@@ -4,7 +4,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex flex-column">
     @auth
-        @if (Auth::user()->login())
+        @if (Auth::check())
         <div class="container-fluid">
             @auth
                 @if (Auth::user()->role === 'siswa')
@@ -159,5 +159,8 @@
     </div>
 </div>
 
-<script src="{{ asset('js/app.js') }}"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+

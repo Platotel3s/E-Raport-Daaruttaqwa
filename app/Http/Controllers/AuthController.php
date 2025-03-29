@@ -28,7 +28,7 @@ class AuthController extends Controller
             'alamat'=>$request->alamat,
         ]);
         Auth::login($user);
-        return redirect('/home');
+        return redirect()->route('login.page');
     }
     public function showLoginForm(){
         return view('auth.login');
