@@ -1,0 +1,45 @@
+.navbar {
+    margin-bottom: 20px;
+    padding: 0;
+    margin: 0;
+
+}
+.dropdown-item{
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+}
+a img{
+    width: 4.5cm;
+    height: 4.5cm;
+}
+.variation-nav li{
+    margin: 1rem;
+}
+.container-fluid{
+    display: flex;
+    flex-direction: column;
+    background-color: #14281d;
+    min-height: 100vh;
+    width: 150px;
+}
+.collapse .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 70vh;
+    gap: 1rem;
+}
+.navbar-nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 5rem;
+}
+.collapse{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}

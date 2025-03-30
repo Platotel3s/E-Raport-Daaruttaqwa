@@ -1,41 +1,11 @@
 body {
-    padding: 20px;
     font-family: 'Times New Roman', Times, serif;
-}
-.navbar {
-    margin-bottom: 20px;
-    padding: 0;
-    margin: 0;
-}
-.dropdown-item{
-    cursor: pointer;
-}
-a{
-    text-decoration: none;
-}
-.main-container{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    min-width: 100vw;
 }
-.container-fluid{
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    background-color: #0634ff;
+main{
+    width: 100%;
 }
-.collapse .navbar-nav {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 70vh;
-    gap: 1rem;
-}
-.navbar-nav{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin-top: 5rem;
-}
-
 

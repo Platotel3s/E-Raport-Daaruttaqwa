@@ -1,22 +1,28 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 <link rel="stylesheet" href="{{ asset('font/css/all.min.css') }}">
+<link rel="stylesheet" href="{{ asset('css/navigation.css') }}">
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light d-flex flex-column">
+<nav class="navbar navbar-expand-lg d-flex flex-column">
     @auth
         @if (Auth::check())
         <div class="container-fluid">
             @auth
                 @if (Auth::user()->role === 'siswa')
-                    <a class="navbar-brand" href="{{ route('siswa.beranda') }}">My App</a>
+                    <a class="navbar-brand" href="{{ route('siswa.beranda') }}">
+                        <img src="{{ asset('img/md.png') }}" alt="md">
+                    </a>
                 @elseif (Auth::user()->role === 'walas')
-                    <a class="navbar-brand" href="{{ route('walas.beranda') }}">My App</a>
+                    <a class="navbar-brand" href="{{ route('walas.beranda') }}">
+                        <img src="{{ asset('img/md.png') }}" alt="md">
+                    </a>
                 @elseif (Auth::user()->role === 'guru')
-                    <a class="navbar-brand" href="{{ route('guru.beranda') }}">My App</a>
+                    <a class="navbar-brand" href="{{ route('guru.beranda') }}">
+                        <img src="{{ asset('img/md.png') }}" alt="md">
+                    </a>
                 @endif
     
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
                         <div class="variation-nav">
                             @auth
                                 @if (Auth::user()->role === 'siswa')
@@ -44,10 +50,10 @@
                             @endauth    
                         </div>
                         @auth
-                            <div class="dropdown">
-                                <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                                    {{ Auth::user()->role }}
-                                </button>
+                        <div class="dropdown">
+                            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                {{ Auth::user()->role }}
+                            </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <li>
                                         <a class="dropdown-item" href="#" id="openProfileModal">Profil</a>
@@ -57,7 +63,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="out-link">
+                        <div class="out-link">
                                 <li class="nav-item">
                                     <form action="{{ route('logout') }}" method="POST">
                                         @csrf
@@ -75,10 +81,9 @@
                                 <a class="nav-link" href="{{ route('register') }}">Register</a>
                             </li>
                         @endauth
-                    </ul>
                 </div>
             @endauth
-        </div>
+        </div>  
         @endif
     @endauth
 </nav>
@@ -158,9 +163,4 @@
         </div>
     </div>
 </div>
-
-
-
-
-
 

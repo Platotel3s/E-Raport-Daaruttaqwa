@@ -10,12 +10,11 @@
     <link rel="stylesheet" href="{{ asset('font/css/all.min.css') }}">
 </head>
 <body>
-    <div class="main-container">
-        @include('layouts.navigation')
-        <div class="container">
-            @yield('content')
-        </div> 
-    </div>
+    @include('layouts.navigation')
+    <main>
+        @yield('content')
+    </main>
+
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
