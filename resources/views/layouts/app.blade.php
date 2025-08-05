@@ -3,19 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ config('app.name', 'Laravel') }}</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('font/css/all.min.css') }}">
+    <title>{{ $title ?? 'Dashboard' }}</title>
+    @vite('resources/css/app.css')
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
 </head>
-<body>
-    @include('layouts.navigation')
-    <main>
-        @yield('content')
-    </main>
+<body class="bg-gray-100 text-gray-800 font-sans">
 
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <div class="flex min-h-screen">
+        @include('layouts.navigation')
+        <div class="flex-1 flex flex-col">
+            <!-- Header -->
+            <header class="bg-white shadow-md p-4 flex justify-between items-center">
+                <h1 class="text-2xl font-bold">{{ $title ?? 'Dashboard' }}</h1>
+                <div>
+                    @auth
+                        <span class="mr-4">Hi, {{ Auth::user()->name }}</span>
+                        <form method="POST" action="{{ route('logout') }}" class="inline">
+                            @csrf
+                            <button type="submit" class="text-red-500 hover:underline">Logout</button>
+                        </form>
+                    @endauth
+                </div>
+            </header>
+            <main class="flex-1 p-6">
+                @yield('content')
+            </main>
+        </div>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 </body>
 </html>
+

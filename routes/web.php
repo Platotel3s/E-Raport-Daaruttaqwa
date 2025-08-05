@@ -33,6 +33,8 @@ Route::middleware(['auth', 'role:siswa'])->group(function () {
     Route::get('/siswa/sekolah',function(){
         return view('siswa.sekolah');
     })->name('siswa.sekolah');
+    Route::patch('/profile',[AuthController::class,'update'])->name('profile.update');
+    Route::patch('/password',[AuthController::class,'updatePassword'])->name('update.password');
 });
 
 Route::middleware(['auth', 'role:walas'])->group(function () {
@@ -44,7 +46,7 @@ Route::middleware(['auth', 'role:walas'])->group(function () {
 Route::middleware(['auth', 'role:guru'])->group(function () {
     Route::get('/guru/main', function () {
         return view('guru.main');
-    })->name('guru.beranda'); 
+    })->name('guru.beranda');
 });
 
 Route::get('/profil', [ProfileController::class, 'show'])->name('profile.show')->middleware('auth');
