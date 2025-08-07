@@ -8,7 +8,7 @@
                     <div class="card-header">
                         <h5>
                         <p class="text-2xl text-red-400">Pengumuman kelas </p>
-                            {{ Auth::user()->name }}
+                            @include('pengumuman.index')
                         </h5>
                     </div>
                     <div class="card-body">

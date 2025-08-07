@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pengumuman;
 
 class SiswaController extends Controller
-{   
+{
     public function siswa(){
         return view('siswa.main');
     }
@@ -63,5 +64,9 @@ class SiswaController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+    public function pengumumanSiswa(){
+        $showAnnouncements=Pengumuman::all();
+        return view('siswa.main',compact('showAnnouncements'));
     }
 }

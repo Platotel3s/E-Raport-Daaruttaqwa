@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SiswaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -35,6 +36,7 @@ Route::middleware(['auth', 'role:siswa'])->group(function () {
     })->name('siswa.sekolah');
     Route::patch('/profile',[AuthController::class,'update'])->name('profile.update');
     Route::patch('/password',[AuthController::class,'updatePassword'])->name('update.password');
+    Route::get('siswa/main',[SiswaController::class,'pengumumanSiswa'])->name('pengumuman.siswa');
 });
 
 Route::middleware(['auth', 'role:walas'])->group(function () {
