@@ -12,7 +12,6 @@
     <div class="flex min-h-screen">
         @include('layouts.navigation')
         <div class="flex-1 flex flex-col">
-            <!-- Header -->
             <header class="bg-white shadow-md p-4 flex justify-between items-center">
                 <h1 class="text-2xl font-bold">{{ $title ?? 'Dashboard' }}</h1>
                 <div>

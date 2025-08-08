@@ -46,12 +46,20 @@ Route::middleware(['auth', 'role:walas'])->group(function () {
     })->name('walas.beranda');
     Route::post('/walas/tambah-siswa', [KelasController::class, 'tambahSiswaKeKelas'])->name('walas.tambahSiswaKeKelas');
     Route::get('/pengumuman/index',[PengumumanController::class,'indexPengumuman'])->name('index.pengumuman');
+    Route::get('/pengumuman/index',[PengumumanController::class,'halPengumuman'])->name('create.pengumuman');
+    Route::post('/pengumuman/create',[PengumumanController::class,'buatPengumuman'])->name('pengumuman.store');
 });
 
 Route::middleware(['auth', 'role:guru'])->group(function () {
     Route::get('/guru/main', function () {
         return view('guru.main');
     })->name('guru.beranda');
+});
+Route::middleware(['auth','role:admin'])->group(function(){
+    Route::get('/list/kelas',[KelasController::class,'index'])->name('list.kelas');
+    Route::get('/main/admin',function(){
+        return view('admin.main');
+    });
 });
 
 Route::get('/profil', [ProfileController::class, 'show'])->name('profile.show')->middleware('auth');

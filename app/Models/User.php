@@ -19,6 +19,7 @@ class User extends Authenticatable
         'nomorHp',
         'alamat',
         'role',
+        'kelas_id',
     ];
 
     protected $hidden = [
@@ -38,5 +39,8 @@ class User extends Authenticatable
     }
     public function kelasMapel() {
         $this->hasMany(GuruKelasMapel::class,'guru_id');
+    }
+    public function scopeSiswa($query){
+        return $query->where('role','siswa');
     }
 }

@@ -10,4 +10,7 @@ class Kelas extends Model
     protected $fillable=[
         'namaKelas',
     ];
+    public function users(){
+        return $this->hasMany(User::class);
+    }
 }

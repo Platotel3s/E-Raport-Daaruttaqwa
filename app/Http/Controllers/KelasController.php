@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kelas;
+use App\Models\User;
 
 class KelasController extends Controller
 {
@@ -19,7 +20,7 @@ class KelasController extends Controller
             'namaKelas'=>'required',
         ]);
         $fashl=Kelas::create($request->all());
-        return redirect()->route('')->with('success','Berhasil menambah kelas');
+        return redirect()->route('walas.beranda')->with('success','Berhasil menambah kelas');
     }
     public function show(String $id){
         $fashl=Kelas::findOrFail($id);
@@ -29,7 +30,7 @@ class KelasController extends Controller
         $request->validate([
             'namaKelas'=>'nullable',
         ]);
-        $fashl=findOrFail($id);
+        $fashl=Kelas::findOrFail($id);
         $fashl->update($request->all());
         return view('kelas.index');
     }
@@ -44,7 +45,7 @@ class KelasController extends Controller
             'siswa_id'=>'required|exists:users,id',
         ]);
         $siswa=User::findOrFail($request->siswa_id);
-        $kelas=Kelas::where('id',$request->kelas_id)->where('wali_kelas_id',auth()->id())->firstOrFail();
+        $kelas=Kelas::where('id',$request->kelas_id)->where('wali_kelas_id',auth()->Auth::id())->firstOrFail();
         $siswa->kelas_id=$kelas->id;
         $siswa->save();
         return back()->with('success','Berhasil menambah siswa');

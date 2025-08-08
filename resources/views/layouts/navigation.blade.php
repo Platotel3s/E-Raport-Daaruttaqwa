@@ -31,10 +31,16 @@
                 <a href="#" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">
                     Daftar kelas saya
                 </a>
-                <a href="#" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">
+                <a href="{{ route('create.pengumuman') }}" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">
                     Buat Pengumuman
                 </a>
             </li>
+            @elseif (Auth::user()->role=='admin')
+                <li>
+                    <a href="{{ route('list.kelas') }}" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">
+                        Daftar kelas
+                    </a>
+                </li>
             @endif
             @endauth
             <li>

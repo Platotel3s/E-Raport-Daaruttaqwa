@@ -46,6 +46,8 @@ class AuthController extends Controller
                 return redirect('/guru/main');
             }elseif(Auth::user()->role === 'walas'){
                 return redirect('/walas/main');
+            }elseif(Auth::user()->role==='admin'){
+                return redirect('/main/admin');
             }
         }
         return back()->withErrors([
