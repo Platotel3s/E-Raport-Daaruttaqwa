@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pengumuman;
+use App\Models\User;
 
 class PengumumanController extends Controller
 {
@@ -12,6 +13,7 @@ class PengumumanController extends Controller
             'judul'=>'required',
             'isi'=>'required',
             'gambar'=>'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
+            'kelas_id'=>'required'
         ]);
         $gambarPengumumanFolder=null;
         if ($request->hasFile('gambar')) {
@@ -23,11 +25,17 @@ class PengumumanController extends Controller
             'judul'=>$request->judul,
             'isi'=>$request->isi,
             'gambar'=>$gambarPengumumanFolder,
+            'kelas_id'=>$request->kelas_id,
+            'user_id'=>User::id(),
         ]);
-        return redirect()->route('')->with('Success','Berhasil Buat Pengumuman');
+        return redirect()->route('index.pengumuman')->with('Success','Berhasil Buat Pengumuman');
     }
     public function tampilkanPengumuman(){
         $showAnnouncements=Pengumuman::all();
         return view('pengumuman.index',compact('showAnnouncements'));
+    }
+    public function indexPengumuman(){
+        $announs=Pengumuman::all();
+        return view('pengumuman.index',compact('announs'));
     }
 }

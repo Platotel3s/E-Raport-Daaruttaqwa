@@ -38,4 +38,15 @@ class KelasController extends Controller
         $fashl->delete();
         return view('kelas.index');
     }
+    public function tambahSiswaKelas(Request $request) {
+        $request->validate([
+            'kelas_id'=>'required|exists:kelas,id',
+            'siswa_id'=>'required|exists:users,id',
+        ]);
+        $siswa=User::findOrFail($request->siswa_id);
+        $kelas=Kelas::where('id',$request->kelas_id)->where('wali_kelas_id',auth()->id())->firstOrFail();
+        $siswa->kelas_id=$kelas->id;
+        $siswa->save();
+        return back()->with('success','Berhasil menambah siswa');
+    }
 }

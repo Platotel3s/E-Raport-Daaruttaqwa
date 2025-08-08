@@ -66,7 +66,9 @@ class SiswaController extends Controller
         //
     }
     public function pengumumanSiswa(){
-        $showAnnouncements=Pengumuman::all();
+        $siswa=auth()->user();
+        $kelasId=$siswa->kelas_id;
+        $showAnnouncements=Pengumuman::where('kelas_id',$kelasId)->orderBy('created_at','desc')->get();
         return view('siswa.main',compact('showAnnouncements'));
     }
 }
