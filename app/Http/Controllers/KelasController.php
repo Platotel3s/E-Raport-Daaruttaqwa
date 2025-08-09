@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Kelas;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class KelasController extends Controller
 {
@@ -49,5 +50,17 @@ class KelasController extends Controller
         $siswa->kelas_id=$kelas->id;
         $siswa->save();
         return back()->with('success','Berhasil menambah siswa');
+    }
+    public function lihatAnggota(){
+        $user=Auth::user();
+        if($user->role!=='walas'){
+            abort('bukan ranah anda');
+        }
+        $kelas=$user->kelasDiwalikan;
+        if(!$kelas){
+            return redirect()->back()->with('error', 'Anda belum ditugaskan sebagai wali kelas.');
+        }
+        $anggota=$kelas->siswa()->where('role','siswa')->get();
+        return view('kelas.index',compact('kelas','anggota'));   
     }
 }

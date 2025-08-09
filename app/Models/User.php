@@ -43,4 +43,7 @@ class User extends Authenticatable
     public function scopeSiswa($query){
         return $query->where('role','siswa');
     }
+    public function kelasDiwalikan(){
+        return $this->hasOne(Kelas::class,'wali_kelas_id');
+    }
 }

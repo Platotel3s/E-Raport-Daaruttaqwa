@@ -18,7 +18,8 @@ class AuthController extends Controller
             'email'=>'required|email',
             'password'=>'required|string|min:8|confirmed',
             'nomorHp'=>'required|string|max:13',
-            'alamat'=>'required|string'
+            'alamat'=>'required|string',
+            'kelas_id'=>'nullable',
         ]);
         $user=User::create([
             'name'=>$request->name,
@@ -26,6 +27,7 @@ class AuthController extends Controller
             'password'=>Hash::make($request->password),
             'nomorHp'=>$request->nomorHp,
             'alamat'=>$request->alamat,
+            'kelas_id' => $request->kelas_id,
         ]);
         Auth::login($user);
         return redirect()->route('login.page');

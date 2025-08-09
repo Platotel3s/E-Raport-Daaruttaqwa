@@ -25,20 +25,20 @@
             </li>
             @elseif (Auth::user()->role=='walas')
             <li>
-                <a href="#" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">
-                    Daftar Siswa kelas saya
-                </a>
-                <a href="#" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">
-                    Daftar kelas saya
-                </a>
                 <a href="{{ route('create.pengumuman') }}" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">
                     Buat Pengumuman
+                </a>
+                <a href="{{ route('anggota.kelas') }}" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">
+                    Anggota Kelas
                 </a>
             </li>
             @elseif (Auth::user()->role=='admin')
                 <li>
                     <a href="{{ route('list.kelas') }}" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">
                         Daftar kelas
+                    </a>
+                    <a href="{{ route('list.mapel') }}" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">
+                        Daftar Mapel
                     </a>
                 </li>
             @endif

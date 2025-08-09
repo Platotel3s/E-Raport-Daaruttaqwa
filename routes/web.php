@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\KelasController;
+use App\Http\Controllers\MapelController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\WalasController;
 use Illuminate\Support\Facades\Route;
@@ -48,6 +49,7 @@ Route::middleware(['auth', 'role:walas'])->group(function () {
     Route::get('/pengumuman/index',[PengumumanController::class,'indexPengumuman'])->name('index.pengumuman');
     Route::get('/pengumuman/index',[PengumumanController::class,'halPengumuman'])->name('create.pengumuman');
     Route::post('/pengumuman/create',[PengumumanController::class,'buatPengumuman'])->name('pengumuman.store');
+    Route::get('/kelas/anggota',[KelasController::class,'lihatAnggota'])->name('anggota.kelas');
 });
 
 Route::middleware(['auth', 'role:guru'])->group(function () {
@@ -60,6 +62,9 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/main/admin',function(){
         return view('admin.main');
     });
+    Route::get('/list/mapel',[MapelController::class,'index'])->name('list.mapel');
+    Route::get('/insert/mapel',[MapelController::class,'create'])->name('create.mapel');
+    Route::post('/store/mapel',[MapelController::class,'store'])->name('store.mapel');
 });
 
 Route::get('/profil', [ProfileController::class, 'show'])->name('profile.show')->middleware('auth');
