@@ -45,11 +45,16 @@ Route::middleware(['auth', 'role:walas'])->group(function () {
     Route::get('/walas/main', function () {
         return view('walas.main');
     })->name('walas.beranda');
-    Route::post('/walas/tambah-siswa', [KelasController::class, 'tambahSiswaKeKelas'])->name('walas.tambahSiswaKeKelas');
+    Route::post('/walas/tambah-siswa',[KelasController::class, 'tambahSiswaKeKelas'])->name('walas.tambahSiswaKeKelas');
     Route::get('/pengumuman/index',[PengumumanController::class,'indexPengumuman'])->name('index.pengumuman');
-    Route::get('/pengumuman/index',[PengumumanController::class,'halPengumuman'])->name('create.pengumuman');
-    Route::post('/pengumuman/create',[PengumumanController::class,'buatPengumuman'])->name('pengumuman.store');
+    Route::get('/pengumuman/create',[PengumumanController::class,'halPengumuman'])->name('create.pengumuman');
+    Route::post('/pengumuman/store',[PengumumanController::class,'buatPengumuman'])->name('pengumuman.store');
+    Route::delete('/pengumuman/{id}/hapus',[PengumumanController::class,'hapusPengumuman'])->name('hapus.pengumuman');
+    Route::get('/pengumuman/{id}/edit',[PengumumanController::class,'halEditPengumuman'])->name('edit.pengumuman');
+    Route::put('/pengumuman/{id}/update',[PengumumanController::class,'updatePengumuman'])->name('update.pengumuman');
+
     Route::get('/kelas/anggota',[KelasController::class,'lihatAnggota'])->name('anggota.kelas');
+    Route::get('/kelas/{id}/anggota',[KelasController::class,'edit'])->name('kelas.edit');
 });
 
 Route::middleware(['auth', 'role:guru'])->group(function () {

@@ -41,14 +41,16 @@ class PengumumanController extends Controller
         return view('pengumuman.index',compact('showAnnouncements'));
     }
     public function indexPengumuman(){
-        $announs=Pengumuman::all();
-        return view('pengumuman.index',compact('announs'));
+        $announs=Pengumuman::with('kelas')->get();
+        $fashl=Kelas::all();
+        return view('pengumuman.index',compact('announs','fashl'));
     }
     public function halPengumuman(){
         $fashl=Kelas::all();
         return view('pengumuman.create',compact('fashl'));
     }
     public function updatePengumuman(String $id,Request $request){
+        $announs=Pengumuman::findOrFail($id);
         $request->validate([
             'judul'=>'required',
             'isi'=>'required',
@@ -60,14 +62,25 @@ class PengumumanController extends Controller
             $ext=$request->file('gambar')->getClientOriginalExtension();
             $namingFile=now()->format('YmdHis').'.'.$ext;
             $gambarPengumumanFolder=$request->file('gambar')->storeAs('gambarPengumuman',$namingFile,'public');
+        }else{
+            $gambarPengumumanFolder=$announs->gambar;
         }
-        $announs=Pengumuman::findOrFail($id);
         $announs->update([
             'judul'=>$request->judul,
             'isi'=>$request->isi,
             'gambar'=>$gambarPengumumanFolder,
             'kelas_id'=>$request->kelas_id,
         ]);
-        return redirect()->route('walas.beranda');
+        return redirect()->route('index.pengumuman');
+    }
+    public function hapusPengumuman(String $id) {
+        $announs=Pengumuman::findOrFail($id);
+        $announs->delete();
+        return redirect()->route('index.pengumuman')->with('success','Berhasil hapus pengumuman');
+    }
+    public function halEditPengumuman(String $id){
+        $announs=Pengumuman::findOrFail($id);
+        $fashl=Kelas::all();
+        return view('pengumuman.edit',compact('announs','fashl'));
     }
 }

@@ -13,6 +13,10 @@ class KelasController extends Controller
         $fashl=Kelas::all();
         return view('kelas.index',compact('fashl'));
     }
+    public function edit(String $id){
+        $fashl=Kelas::findOrFail($id);
+        return view('kelas.edit',compact('fashl'));
+    }
     public function create(){
         return view('kelas.create');
     }

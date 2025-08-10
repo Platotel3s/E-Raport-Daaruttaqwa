@@ -1,22 +1,71 @@
-<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-@foreach ($showAnnouncements as $pengumuman)
-    <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
-        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            {{ $pengumuman->judul }}
-        </h5>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            {{ $pengumuman->isi }}
-        </p>
-
-        @if($pengumuman->gambar)
-            <img src="{{ asset('storage/' . $pengumuman->gambar) }}" alt="gambar" class="mt-2 rounded-lg">
-        @endif
-
-        {{-- <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Read more
-            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m3 4-3 4"/>
-            </svg>
-        </a> --}}
-    </div>
-@endforeach
+@extends('layouts.app')
+@section('content')
+<div class="overflow-x-auto">
+    <table class="min-w-full divide-y divide-gray-200">
+        <thead class="bg-gray-50">
+            <tr>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    No
+                </th>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Judul Pengumuman
+                </th>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Isi Pengumuman
+                </th>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Gambar
+                </th>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Kelas
+                </th>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Tanggal pembuatan
+                </th>
+                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Aksi
+                </th>
+            </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+            @foreach ($announs as $pengumuman)
+            <tr class="bg-gray-50">
+                <td class="px-6 py-4 whitespace-wrap text-sm font-medium text-gray-900">
+                    {{ $pengumuman->id }}
+                </td>
+                <td class="px-6 py-4 whitespace-wrap text-sm font-medium text-gray-900">
+                    {{ $pengumuman->judul }}
+                </td>
+                <td class="px-6 py-4 whitespace-wrap text-sm font-medium text-gray-900">
+                    {{ $pengumuman->isi }}
+                </td>
+                <td class="px-6 py-4 whitespace-wrap text-sm font-medium text-gray-900">
+                    @if($pengumuman->gambar)
+                        <img src="{{ asset('storage/'.$pengumuman->gambar) }}" alt="gambar" style="width: 900px">
+                    @endif
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                    {{ $pengumuman->kelas->namaKelas }}
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                    {{ $pengumuman->created_at }}
+                </td>
+                <td class="px-6 py-4 whitespace-    wrap text-sm font-medium text-gray-900">
+                    <form action="{{ route('hapus.pengumuman',$pengumuman->id) }}" method="GET">
+                        @csrf
+                        @method('GET')
+                        <button type="submit" class="bg-red-500 text-white p-2  rounded-md hover:bg-red-600">
+                            hapus
+                        </button>
+                        <a href="{{ route('edit.pengumuman',$pengumuman->id) }}" class="bg-yellow-500 hover:bg-yellow-600 rounded p-2 text-black">
+                            Edit
+                        </a>
+                    </form>
+                </td>
+            </tr>
+            
+            @endforeach
+        </tbody>
+    </table>
+</div>
+@endsection

@@ -87,7 +87,7 @@
                             <div class="form-group row">
                                 <label for="kelas" class="col-md-4 col-form-label text-md-right">Kelas</label>
                                 <div class="col-md-6">
-                                    <select name="kelas_id" required>
+                                    <select name="kelas_id" class="bg-white border border-gray-300 rounded-md p-2">
                                         <option value="">-- Pilih Kelas --</option>
                                         <option value="1">1A</option>
                                         <option value="2">1B</option>
