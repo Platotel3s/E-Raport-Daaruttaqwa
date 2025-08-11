@@ -51,9 +51,9 @@
                     {{ $pengumuman->created_at }}
                 </td>
                 <td class="px-6 py-4 whitespace-    wrap text-sm font-medium text-gray-900">
-                    <form action="{{ route('hapus.pengumuman',$pengumuman->id) }}" method="GET">
+                    <form action="{{ route('hapus.pengumuman',$pengumuman->id) }}" method="POST">
                         @csrf
-                        @method('GET')
+                        @method('DELETE')
                         <button type="submit" class="bg-red-500 text-white p-2  rounded-md hover:bg-red-600">
                             hapus
                         </button>
