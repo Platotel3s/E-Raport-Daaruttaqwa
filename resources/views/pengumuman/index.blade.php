@@ -54,10 +54,10 @@
                     <form action="{{ route('hapus.pengumuman',$pengumuman->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="bg-red-500 text-white p-2  rounded-md hover:bg-red-600">
+                        <button type="submit" class="bg-red-600 text-white p-2  rounded-md hover:bg-red-700">
                             hapus
                         </button>
-                        <a href="{{ route('edit.pengumuman',$pengumuman->id) }}" class="bg-yellow-500 hover:bg-yellow-600 rounded p-2 text-black">
+                        <a href="{{ route('edit.pengumuman',$pengumuman->id) }}" class="bg-yellow-600 hover:bg-yellow-700 rounded p-2 text-black">
                             Edit
                         </a>
                     </form>

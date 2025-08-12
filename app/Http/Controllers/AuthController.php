@@ -30,7 +30,7 @@ class AuthController extends Controller
             'kelas_id' => $request->kelas_id,
         ]);
         Auth::login($user);
-        return redirect()->route('login.page');
+        return redirect()->route('welcome');
     }
     public function showLoginForm(){
         return view('auth.login');

@@ -20,9 +20,9 @@ Route::get('/home', function () {
 Route::get('/nilai', function () {
     return view('center.nilai');
 })->middleware('auth');
-Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register');
-Route::post('/register', [AuthController::class, 'register']);
-Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.page');
+Route::get('/register',[AuthController::class, 'showRegisterForm'])->name('register.page');
+Route::post('/register',[AuthController::class, 'register'])->name('register');
+Route::get('/login',[AuthController::class, 'showLoginForm'])->name('login.page');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
