@@ -18,7 +18,7 @@
                     Pelajaran</a>
             </li>
             <li>
-                <a href="#" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">Homework</a>
+                {{-- <a href="{{ route('halaman.kumpul') }}" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">Homework</a> --}}
             </li>
             <li>
                 <a href="#" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">Rapot</a>
