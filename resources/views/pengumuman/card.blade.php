@@ -7,10 +7,8 @@
         <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
             {{ $pengumuman->isi }}
         </p>
-
         @if($pengumuman->gambar)
             <img src="{{ asset('storage/' . $pengumuman->gambar) }}" alt="gambar" class="mt-2 rounded-lg">
         @endif
-
     </div>
 @endforeach
