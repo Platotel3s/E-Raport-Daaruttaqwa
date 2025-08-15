@@ -43,7 +43,7 @@
                     <a href="{{ route('list.mapel') }}" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">
                         Daftar Mapel
                     </a>
-                    
+
                 </li>
             @endif
             @endauth
