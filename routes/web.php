@@ -40,7 +40,7 @@ Route::middleware(['auth', 'role:siswa'])->group(function () {
     Route::get('/siswa/sekolah',function(){
         return view('siswa.sekolah');
     })->name('siswa.sekolah');
-    Route::get('siswa/main',[SiswaController::class,'pengumumanSiswa'])->name('pengumuman.siswa');
+    Route::get('siswa/mainAnnounce',[SiswaController::class,'pengumumanSiswa'])->name('pengumuman.siswa');
 
     Route::post('/tugas/{id}/kumpul',[PengumpulanTugasController::class,'store'])->name('tugas.kumpul');
     // Route::get('/halaman/tugas/{id}',[PengumpulanTugasController::class,'halKumpul'])->name('halaman.kumpul');
@@ -85,7 +85,7 @@ Route::middleware(['auth','role:admin'])->group(function(){
     Route::get('/list/kelas',[KelasController::class,'index'])->name('list.kelas');
     Route::get('/main/admin',function(){
         return view('admin.main');
-    });
+    })->name('admin.main');
     Route::get('/list/mapel',[MapelController::class,'index'])->name('list.mapel');
     Route::get('/insert/mapel',[MapelController::class,'create'])->name('create.mapel');
     Route::post('/store/mapel',[MapelController::class,'store'])->name('store.mapel');

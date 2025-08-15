@@ -7,7 +7,26 @@
 
 <aside class="w-64 bg-white shadow-md border-r border-gray-200">
     <div class="p-4 text-center border-b border-gray-200">
-        <h2 class="text-lg font-semibold text-indigo-600">E-Raport Muhammadiyah</h2>
+        @auth
+            @if (Auth::user()->role==='siswa')
+                <a href="{{ route('siswa.beranda') }}">
+                    <h2 class="text-lg font-semibold text-indigo-600">E-Raport <br> Daaruttaqwa</h2>
+                </a>
+            @elseif(Auth::user()->role==='walas')
+                <a href="{{ route('walas.beranda') }}">
+                    <h2 class="text-lg font-semibold text-indigo-600">E-Raport <br> Daaruttaqwa</h2>
+                </a>
+            @elseif(Auth::user()->role==='guru')
+                <a href="{{ route('guru.beranda') }}">
+                    <h2 class="text-lg font-semibold text-indigo-600">E-Raport <br> Daaruttaqwa</h2>
+                </a>
+            @elseif(Auth::user()->role==='admin')
+                <a href="{{ route('admin.main') }}">
+                    <h2 class="text-lg font-semibold text-indigo-600">E-Raport <br> Daaruttaqwa</h2>
+                </a>
+            @endif
+        @endauth
+
     </div>
     <nav class="mt-4">
         <ul class="space-y-1">
@@ -18,33 +37,39 @@
                     Pelajaran</a>
             </li>
             <li>
-                {{-- <a href="{{ route('halaman.kumpul') }}" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">Homework</a> --}}
+                {{-- <a href="{{ route('halaman.kumpul') }}"
+                    class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">Homework</a> --}}
             </li>
             <li>
                 <a href="#" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">Rapot</a>
             </li>
             @elseif (Auth::user()->role=='walas')
             <li>
-                <a href="{{ route('create.pengumuman') }}" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">
+                <a href="{{ route('create.pengumuman') }}"
+                    class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">
                     Buat Pengumuman
                 </a>
-                <a href="{{ route('anggota.kelas') }}" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">
+                <a href="{{ route('anggota.kelas') }}"
+                    class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">
                     Anggota Kelas
                 </a>
-                <a href="{{ route('index.pengumuman') }}" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">
-                        List Pengumuman
+                <a href="{{ route('index.pengumuman') }}"
+                    class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">
+                    List Pengumuman
                 </a>
             </li>
             @elseif (Auth::user()->role=='admin')
-                <li>
-                    <a href="{{ route('list.kelas') }}" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">
-                        Daftar kelas
-                    </a>
-                    <a href="{{ route('list.mapel') }}" class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">
-                        Daftar Mapel
-                    </a>
+            <li>
+                <a href="{{ route('list.kelas') }}"
+                    class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">
+                    Daftar kelas
+                </a>
+                <a href="{{ route('list.mapel') }}"
+                    class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">
+                    Daftar Mapel
+                </a>
 
-                </li>
+            </li>
             @endif
             @endauth
             <li>
@@ -103,8 +128,8 @@
         <h2 class="text-xl font-semibold mb-4">Ganti Password</h2>
         <div>
             <label for="current_password" class="block font-medium">Password Lama</label>
-            <input type="password" name="current_password" id="current_password"
-                class="w-full border rounded p-2" required>
+            <input type="password" name="current_password" id="current_password" class="w-full border rounded p-2"
+                required>
         </div>
         <div>
             <label for="password" class="block font-medium">Password Baru</label>
