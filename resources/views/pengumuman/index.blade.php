@@ -31,7 +31,7 @@
             @foreach ($announs as $pengumuman)
             <tr class="bg-gray-50">
                 <td class="px-6 py-4 whitespace-wrap text-sm font-medium text-gray-900">
-                    {{ $pengumuman->id }}
+                    {{ $loop->iteration }}
                 </td>
                 <td class="px-6 py-4 whitespace-wrap text-sm font-medium text-gray-900">
                     {{ $pengumuman->judul }}

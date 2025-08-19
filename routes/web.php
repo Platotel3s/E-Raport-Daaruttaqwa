@@ -48,9 +48,10 @@ Route::middleware(['auth', 'role:siswa'])->group(function () {
 });
 
 Route::middleware(['auth', 'role:walas'])->group(function () {
-    Route::get('/walas/main', function () {
-        return view('walas.main');
-    })->name('walas.beranda');
+    // Route::get('/walas/main', function () {
+    //     return view('walas.main');
+    // })->name('walas.beranda');
+    Route::get('/walas/main',[WalasController::class,'walas'])->name('walas.beranda');
     Route::post('/walas/tambah-siswa',[KelasController::class, 'tambahSiswaKeKelas'])->name('walas.tambahSiswaKeKelas');
     Route::get('/pengumuman/index',[PengumumanController::class,'indexPengumuman'])->name('index.pengumuman');
     Route::get('/pengumuman/create',[PengumumanController::class,'halPengumuman'])->name('create.pengumuman');

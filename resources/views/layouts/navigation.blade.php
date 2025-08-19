@@ -53,10 +53,10 @@
                     class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">
                     Anggota Kelas
                 </a>
-                <a href="{{ route('index.pengumuman') }}"
+                {{-- <a href="{{ route('index.pengumuman') }}"
                     class="block px-4 py-2 hover:bg-indigo-50 hover:text-indigo-600 transition">
                     List Pengumuman
-                </a>
+                </a> --}}
             </li>
             @elseif (Auth::user()->role=='admin')
             <li>

@@ -35,7 +35,10 @@ class PengumumanController extends Controller
         $user=auth()->user();
         if ($user->role==='siswa') {
             $showAnnouncements=Pengumuman::where('kelas_id',$user->kelas_id)->get();
-        }else{
+        }elseif($user->role==='walas'){
+            $kelasId=$user->kelas_id;
+            $showAnnouncements=Pengumuman::where('kelas_id',$kelasId)->get();
+        }elseif($user->role==='admin'){
             $showAnnouncements=Pengumuman::all();
         }
         return view('pengumuman.index',compact('showAnnouncements'));

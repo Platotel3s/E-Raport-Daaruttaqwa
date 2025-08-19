@@ -3,11 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Kelas;
+use App\Models\Pengumuman;
 
 class WalasController extends Controller
 {
     public function walas(){
-        return view('walas.main');
+        $user=auth()->user();
+        $kelas=Kelas::where('wali_kelas_id',$user->id)->first();
+        if($kelas){
+            $announs=Pengumuman::where('kelas_id',$kelas->id)->orderBy('created_at','asc')->get();
+        }else{
+            $announs=collect();
+        }
+        
+        return view('walas.main',compact('announs'));
     }
     /**
      * Display a listing of the resource.
